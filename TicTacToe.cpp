@@ -1,5 +1,6 @@
 #include "TicTacToe.h"
 #include <iostream>
+#include <stdlib.h>
 using namespace std;
 
 TicTacToe::TicTacToe()
@@ -18,14 +19,15 @@ void TicTacToe::clearBoard()
 
 void TicTacToe::printBoard()
 {
-	for( int i=0; i<40; i++ ) cout << endl;
-	cout << " |\t1\t|\t2\t|\t3\t|\t" << endl;
+	system("clear");
+	cout << endl << endl << endl;
+	cout << "\t |\t1\t|\t2\t|\t3\t|\t" << endl;
 	
 	for (int i = 0; i < 3; i++) {
-		cout << "--------------------------------------------------" << endl;
-		cout << endl << i+1 << "|\t" << board[i][0] << "\t" << "|\t" << board[i][1] << "\t" << "|\t" << board[i][2] << "\t" << "|" << endl << endl;
+		cout << "\t--------------------------------------------------" << endl;
+		cout << endl << "\t" << i+1 << "|\t" << board[i][0] << "\t" << "|\t" << board[i][1] << "\t" << "|\t" << board[i][2] << "\t" << "|" << endl << endl;
 	}
-	cout << "--------------------------------------------------" << endl;
+	cout << "\t--------------------------------------------------" << endl << endl << endl;
 }
 
 void TicTacToe::playGame()
@@ -45,12 +47,12 @@ void TicTacToe::playGame()
 
 			if( checkVictory() ){
 				printBoard();
-				cout << "Player " << current << " has won!!!" << endl;
+				cout << "\tPlayer " << current << " has won!!!" << endl << endl << endl;
 				return;
 			}
 			if( checkDraw() ){
 				printBoard();
-				cout << "The match resulted in a draw!!" << endl;
+				cout << "\tThe match resulted in a draw!!" << endl << endl << endl;
 				return;
 			}
 
@@ -63,7 +65,7 @@ void TicTacToe::playGame()
 
 void TicTacToe::getCoordinates(int &x, int &y)
 {
-	cout << endl << "Enter Coordinates: ";
+	cout << endl << "\tEnter Coordinates: ";
 	cin >> x >> y;
 }
 
